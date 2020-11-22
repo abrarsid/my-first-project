@@ -1,8 +1,6 @@
 package com.company;
-
 class abrar implements Runnable
 {
-
     @Override
     public void run() {
         int i;
