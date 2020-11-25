@@ -32,7 +32,7 @@ class s implements Runnable
     {
      for (int i=1;i<=10;i++)
      {
-         System.out.println("Thread c"+i);
+         System.out.println("Thread C"+i);
      }
     }
 }
