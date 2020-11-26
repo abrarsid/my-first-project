@@ -1,0 +1,73 @@
+package com.company;
+
+class SycroDeno
+{
+    void printTable(int n)
+    {
+        for (int i=1;i<=10;i++)
+        {
+            System.out.println(n*i);
+            try {
+                Thread.sleep(1000);
+            }catch(Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
+
+}
+class Table extends Thread
+{ SycroDeno sd;
+    public Table(SycroDeno sd)
+    {
+       this.sd=sd;
+    }
+
+    @Override
+    public void run()
+    {
+       sd.printTable(2);
+    }
+}
+class table2 extends Thread
+{
+    SycroDeno sd;
+    table2(SycroDeno sd)
+    {
+        this.sd=sd;
+    }
+    @Override
+    public void run()
+    {
+    sd.printTable(3);
+    }
+}
+class table3 extends Thread
+{
+    SycroDeno sd;
+    table3(SycroDeno sd)
+    {
+        this.sd=sd;
+    }
+
+    @Override
+    public void run() {
+        sd.printTable(4);
+    }
+}
+public class Main
+{
+
+    public static void main(String[] args) {
+	// write your code here
+        SycroDeno ob =new SycroDeno();
+        Table t1=new Table(ob);
+        t1.start();
+        table2 t2=new table2(ob);
+        t2.start();
+        table3 t3=new table3(ob);
+        t3.start();
+
+    }
+}

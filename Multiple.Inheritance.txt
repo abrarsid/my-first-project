@@ -1,0 +1,38 @@
+package com.company;
+
+import java.util.Scanner;
+class First
+{
+    public int a=10;
+    int  Data(int y)
+    {
+        int b=y;
+        return (a+b);
+    }
+}
+interface second
+{
+
+        int c=20;
+        void GetData();
+}
+class result extends First implements second
+{
+    int m = a*second.c;
+    int sum = Data(20);
+    public void GetData()
+    {
+        System.out.println("Addition ="+sum);
+        System.out.println("Multiplication = "+m);
+    }
+}
+
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+    result r =new result();
+    r.GetData(); 
+    }
+}
